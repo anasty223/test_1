@@ -1,0 +1,262 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap'); */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* font-family: 'Rubik', sans-serif; */
+  width: 1440px;
+  background-image: url("../../public/images/bg-cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 19px;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.singUp-button{
+  cursor: pointer;
+  cursor: pointer;
+  color: #6CEEC7;
+  font-size: 24px;
+  font-weight: 500;
+  
+  }
+  .singUp-text{
+    color: white;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding-top: 50px;
+  }
+  .container-input-button {
+    position: relative;
+  }
+  
+  .button-list {
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 1px;
+    height: 56px;
+    transition: border-color 0.3s ease;
+    color: #E0E0E0;
+    padding-left: 50px;
+  }
+  
+  .button-list-icon {
+    color: #E0E0E0;
+    padding-left: 50px;
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+    transform-origin: top left;
+  }
+  
+  .button-icon {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    transition: transform 0.3s ease;
+    transform-origin: top left;
+  }
+  
+  .container-input-button:focus-within .button-list-icon,
+  .container-input-button input[type="text"]:focus + .button-list-icon,
+  .container-input-button input[type="text"]:not(:placeholder-shown) + .button-list-icon {
+    transform: translateY(-45px);
+  }
+  
+  .container-input-button:focus-within .button-icon,
+  .container-input-button input[type="text"]:focus + .button-icon,
+  .container-input-button input[type="text"]:not(:placeholder-shown) + .button-icon {
+    transform: translateY(-43px);
+  }
+  
+  .container-input-button input[type="text"],
+  .container-input-button input[type="password"] {
+    outline: none;
+  }
+  
+  .button-list[type="password"] {
+    background: none;
+  }
+  
+  .container-input-button input[type="text"]:not(:placeholder-shown) + .button-list-icon,
+  .container-input-button input[type="text"]:not(:placeholder-shown) + .button-icon {
+    transform: translateY(-45px);
+  }
+  
+.agree{
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #E0E0E0;
+}
+  
+  .term{
+    color: #6CEEC7;
+
+font-size: 15px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+text-decoration:underline;
+margin-left: 10px;
+  }
+  .container-agree{
+    display: flex;
+  }
+
+  .checkAgree {
+    display: none;
+  }
+  
+  /* Стили для кастомного чекбокса */
+  .customCheckbox {
+    margin-right: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6CEEC7;  
+    background-color: transparent; 
+    cursor: pointer;
+    position: relative;
+  }
+  
+
+  .customCheckbox::after {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 14px;
+    border: solid #6CEEC7;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    right: 4px;
+  }
+  
+
+  .checkAgree:checked + .customCheckbox::after {
+    visibility: visible;
+  }
+
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-input {
+    color: #E0E0E0;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    width: 300px;
+    height: 56px;
+    flex-shrink: 0;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    border-radius: 1px;
+    padding-left: 50px;
+  }
+  
+  .dropdown-input::placeholder {
+    color: #E0E0E0;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 300;
+    transition: font-size 0.3s, transform 0.3s;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-input::placeholder {
+    font-size: 11px;
+    transform: translateY(-10px);
+  }
+  /* ---------------------- */
+/* Медиа-запрос для экранов с максимальной шириной 392px */
+@media (max-width: 392px) {
+  body {
+    width: 392px;
+
+  }
+
+  .logo{
+    width: 190.001px;
+height: 48px;
+flex-shrink: 0;
+  }
+  .singUp-button{
+    cursor: pointer;
+    color: #6CEEC7;
+    font-size: 24px;
+    
+    
+    }
+}
+
+/* Медиа-запрос для экранов с шириной от 393px до 1440px */
+@media (min-width: 393px) and (max-width: 1440px) {
+  body {
+    width: 100%;
+   
+  }
+.singUp-button{
+cursor: pointer;
+cursor: pointer;
+color: #6CEEC7;
+font-size: 24px;
+}
+
+}
